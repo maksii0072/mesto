@@ -1,0 +1,7 @@
+.element {
+    background-color: #fff;
+    height: 363px;
+    border-radius: 10px;
+    position: relative;
+    align-items: baseline;
+}
