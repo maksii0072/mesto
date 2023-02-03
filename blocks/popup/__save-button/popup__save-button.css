@@ -3,11 +3,11 @@
     text-align: center;
     color: #fff;
     padding: 14px 125px 18px;
-    margin: 32px 0 33px;
+    margin: 56px 0 23px;
     background-color: #000;
+    font-weight: 400;
     font-size: 18px;
     line-height: 22px;
-    font-weight: 400;
     cursor: pointer;
     transition: opacity .6s;
     border: none;
@@ -20,11 +20,11 @@
 
 @media screen and (max-width: 570px) {
     .popup__save-button {
-        margin: 35px 0 25px;
+        margin: 54px 0 9px;
         font-size: 14px;
         line-height: 17px;
         max-width: 238px;
-        padding: 10px 82px 14px;
+        padding: 14px 46px 17px;
 
     }
 }

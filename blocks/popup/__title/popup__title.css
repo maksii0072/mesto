@@ -4,13 +4,13 @@
     font-weight: 900;
     white-space: nowrap;
     margin: 0;
-    padding: 34px 0 54px;
+    padding: 20px 0 49px;
 }
 
 @media screen and (max-width: 570px) {
     .popup__title {
         font-size: 18px;
-        line-height: 22px;
-        padding: 0 0 75px 0;
+        line-height: 21px;
+        padding: 0 0 75px;
     }
 }

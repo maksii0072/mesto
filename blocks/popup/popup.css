@@ -14,3 +14,15 @@
     background-color: rgba(0, 0, 0, .5);
     overflow: auto;
 }
+
+@media screen and (max-width: 570px) {
+    .popup {
+        height: 110%;
+        top: 47%;
+
+
+
+
+
+    }
+}
