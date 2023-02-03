@@ -3,7 +3,7 @@
     max-width: 880px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
-    gap: 19px 17px;
+    gap: 16px 17px;
     justify-content: center;
 
 
@@ -11,6 +11,6 @@
 
 @media screen and (max-width: 426px) {
     .elements {
-        margin-top: 30px;
+        margin: 0;
     }
 }

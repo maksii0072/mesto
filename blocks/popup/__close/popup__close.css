@@ -8,12 +8,12 @@
     background-color: transparent;
     cursor: pointer;
     background-size: 35px 35px;
-    top: -42px;
+    top: -36px;
     right: -39px;
     outline: none;
     transition: opacity 0.3s;
     padding: 0;
-  }
+}
 
 .popup__close:hover {
     opacity: .6;

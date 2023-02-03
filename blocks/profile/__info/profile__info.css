@@ -7,9 +7,17 @@
 }
 
 
-@media screen and (max-width: 426px) {
+@media screen and (min-width: 426px) and (max-width: 768px) {
     .profile__info {
-        align-items: center;
-        margin: 0 auto;
+        width: 95%;
+        margin-left: 5px;
+
     }
 }
+    @media screen and (max-width: 426px) {
+        .profile__info {
+            align-items: center;
+            margin: 0 auto;
+            margin-left: 45px;
+        }
+    }
