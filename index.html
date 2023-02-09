@@ -10,7 +10,7 @@
 
   <body class="page">
     <!-- =========== header ====================== -->
-    <header class="header header__wrapper">
+    <header class="header">
       <img
         class="header__logo"
         src="images/logo/logo.svg"
@@ -19,92 +19,100 @@
     </header>
 
     <!-- ====================== profile ======================= -->
-    <main class="content content__wrapper">
-      <section class="profile">
-        <img
-          class="profile__avatar"
-          src="images/logo/kusto.jpg"
-          alt="Аватарка"
-        />
-        <div class="profile__info">
-          <div class="profile__wrapper">
-            <h1 class="profile__title">Жак-Ив Кусто</h1>
-            <button class="profile__edit-button" type="button"></button>
-          </div>
-          <p class="profile__description">Исследователь океана</p>
-        </div>
-        <button class="profile__add-button" type="button"></button>
-      </section>
-      <!-- ============== elements ================== -->
-      <section class="elements">
-        <article class="element">
+    <main class="content">
+      <div class="content__wrapper">
+        <section class="profile">
           <img
-            class="element__img"
-            src="images/content/Карелия.jpg"
-            alt="Карелия"
+            class="profile__avatar"
+            src="images/logo/kusto.jpg"
+            alt="Аватарка"
           />
-          <div class="element__description-container">
-            <h2 class="element__description">Карелия</h2>
-            <button class="element__like-button" type="button"></button>
+          <div class="profile__info">
+            <div class="profile__wrapper">
+              <h1 class="profile__title">Жак-Ив Кусто</h1>
+              <button class="profile__edit-button" type="button"></button>
+            </div>
+            <p class="profile__description">Исследователь океана</p>
           </div>
-        </article>
-        <article class="element">
-          <img
-            class="element__img"
-            src="images/content/Байкал.jpg"
-            alt="Байкал"
-          />
-          <div class="element__description-container">
-            <h2 class="element__description">Байкал</h2>
-            <button class="element__like-button" type="button"></button>
-          </div>
-        </article>
-        <article class="element">
-          <img
-            class="element__img"
-            src="images/content/Париж.jpg"
-            alt="Париж"
-          />
-          <div class="element__description-container">
-            <h2 class="element__description">Париж</h2>
-            <button class="element__like-button" type="button"></button>
-          </div>
-        </article>
-        <article class="element">
-          <img
-            class="element__img"
-            src="images/content/Ростов-на-Дону.jpg"
-            alt="Ростов-на-Дону"
-          />
-          <div class="element__description-container">
-            <h2 class="element__description">Ростов-на-Дону</h2>
-            <button class="element__like-button" type="button"></button>
-          </div>
-        </article>
-        <article class="element">
-          <img class="element__img" src="images/content/Сочи.jpeg" alt="Сочи" />
-          <div class="element__description-container">
-            <h2 class="element__description">Сочи</h2>
-            <button class="element__like-button" type="button"></button>
-          </div>
-        </article>
-        <article class="element">
-          <img
-            class="element__img"
-            src="images/content/Алтай.jpg"
-            alt="Алтай"
-          />
-          <div class="element__description-container">
-            <h2 class="element__description">Алтай</h2>
-            <button class="element__like-button" type="button"></button>
-          </div>
-        </article>
-      </section>
+          <button class="profile__add-button" type="button"></button>
+        </section>
+        <!-- ============== elements ================== -->
+        <section class="elements">
+          <article class="element">
+            <img
+              class="element__img"
+              src="images/content/Карелия.jpg"
+              alt="Карелия"
+            />
+            <div class="element__description-container">
+              <h2 class="element__description">Карелия</h2>
+              <button class="element__like-button" type="button"></button>
+            </div>
+          </article>
+          <article class="element">
+            <img
+              class="element__img"
+              src="images/content/Байкал.jpg"
+              alt="Байкал"
+            />
+            <div class="element__description-container">
+              <h2 class="element__description">Байкал</h2>
+              <button class="element__like-button" type="button"></button>
+            </div>
+          </article>
+          <article class="element">
+            <img
+              class="element__img"
+              src="images/content/Париж.jpg"
+              alt="Париж"
+            />
+            <div class="element__description-container">
+              <h2 class="element__description">Париж</h2>
+              <button class="element__like-button" type="button"></button>
+            </div>
+          </article>
+          <article class="element">
+            <img
+              class="element__img"
+              src="images/content/Ростов-на-Дону.jpg"
+              alt="Ростов-на-Дону"
+            />
+            <div class="element__description-container">
+              <h2 class="element__description">Ростов-на-Дону</h2>
+              <button class="element__like-button" type="button"></button>
+            </div>
+          </article>
+          <article class="element">
+            <img
+              class="element__img"
+              src="images/content/Сочи.jpeg"
+              alt="Сочи"
+            />
+            <div class="element__description-container">
+              <h2 class="element__description">Сочи</h2>
+              <button class="element__like-button" type="button"></button>
+            </div>
+          </article>
+          <article class="element">
+            <img
+              class="element__img"
+              src="images/content/Алтай.jpg"
+              alt="Алтай"
+            />
+            <div class="element__description-container">
+              <h2 class="element__description">Алтай</h2>
+              <button class="element__like-button" type="button"></button>
+            </div>
+          </article>
+        </section>
+      </div>
     </main>
     <!-- =========== footer====================== -->
 
-    <footer class="footer footer__wrapper">
-      <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
+    <footer class="footer">
+      <div class="footer__wrapper">
+        <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
+      </div>
     </footer>
 
     <!-- =========== popup ====================== -->
