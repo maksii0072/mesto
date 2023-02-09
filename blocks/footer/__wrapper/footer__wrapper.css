@@ -1,0 +1,28 @@
+.footer__wrapper {
+    margin: 0 auto;
+    max-width: 880px;
+
+}
+
+@media screen and (max-width: 900px) {
+    .footer__wrapper {
+        max-width: 90%;
+        padding: 55px 0 40px 0;
+
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .footer__wrapper {
+        padding: 48px 0 36px 0;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .footer__wrapper {
+        max-width: 282px;
+
+
+    }
+}
+

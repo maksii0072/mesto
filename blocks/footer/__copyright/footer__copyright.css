@@ -4,6 +4,7 @@
     line-height: 31px;
     margin: 0;
     color: #545454;
+    padding-top: 67px;
 }
 
 
@@ -11,5 +12,6 @@
     .footer__copyright {
         font-size: 14px;
         line-height: 25px;
+        padding:0;
     }
 }
