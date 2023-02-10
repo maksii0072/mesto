@@ -27,12 +27,6 @@ function handleFormSubmit(event) {
 }
 
 
-// formElement.addEventListener('submit', (event) => {
-//         event.preventDefault();
-//         profileTitle.textContent = inputName.value;
-//         profileDescription.textContent = inputAbout.value;
-//         closePopup();
-// });
-
+formElement.addEventListener('submit', handleFormSubmit);
 profileEditBtn.addEventListener('click', openPopup);
 popupCloseBtn.addEventListener('click', closePopup);
