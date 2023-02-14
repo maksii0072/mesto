@@ -1,153 +1,166 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="pages/index.css" />
     <title>Место</title>
-  </head>
+</head>
 
-  <body class="page">
+<body class="page">
     <!-- =========== header ====================== -->
     <header class="header">
-      <img
-        class="header__logo"
-        src="images/logo/logo.svg"
-        alt="Логотип_Место"
-      />
+        <img class="header__logo" src="images/logo/logo.svg" alt="Логотип_Место" />
     </header>
 
     <!-- ====================== profile ======================= -->
     <main class="content">
-      <div class="content__wrapper">
-        <section class="profile">
-          <img
-            class="profile__avatar"
-            src="images/logo/kusto.jpg"
-            alt="Аватарка"
-          />
-          <div class="profile__info">
-            <div class="profile__wrapper">
-              <h1 class="profile__title">Жак-Ив Кусто</h1>
-              <button class="profile__edit-button" type="button"></button>
-            </div>
-            <p class="profile__description">Исследователь океана</p>
-          </div>
-          <button class="profile__add-button" type="button"></button>
-        </section>
-        <!-- ============== elements ================== -->
-        <section class="elements">
-          <article class="element">
-            <img
-              class="element__img"
-              src="images/content/Карелия.jpg"
-              alt="Карелия"
-            />
-            <div class="element__description-container">
-              <h2 class="element__description">Карелия</h2>
-              <button class="element__like-button" type="button"></button>
-            </div>
-          </article>
-          <article class="element">
-            <img
-              class="element__img"
-              src="images/content/Байкал.jpg"
-              alt="Байкал"
-            />
-            <div class="element__description-container">
-              <h2 class="element__description">Байкал</h2>
-              <button class="element__like-button" type="button"></button>
-            </div>
-          </article>
-          <article class="element">
-            <img
-              class="element__img"
-              src="images/content/Париж.jpg"
-              alt="Париж"
-            />
-            <div class="element__description-container">
-              <h2 class="element__description">Париж</h2>
-              <button class="element__like-button" type="button"></button>
-            </div>
-          </article>
-          <article class="element">
-            <img
-              class="element__img"
-              src="images/content/Ростов-на-Дону.jpg"
-              alt="Ростов-на-Дону"
-            />
-            <div class="element__description-container">
-              <h2 class="element__description">Ростов-на-Дону</h2>
-              <button class="element__like-button" type="button"></button>
-            </div>
-          </article>
-          <article class="element">
-            <img
-              class="element__img"
-              src="images/content/Сочи.jpeg"
-              alt="Сочи"
-            />
-            <div class="element__description-container">
-              <h2 class="element__description">Сочи</h2>
-              <button class="element__like-button" type="button"></button>
-            </div>
-          </article>
-          <article class="element">
-            <img
-              class="element__img"
-              src="images/content/Алтай.jpg"
-              alt="Алтай"
-            />
-            <div class="element__description-container">
-              <h2 class="element__description">Алтай</h2>
-              <button class="element__like-button" type="button"></button>
-            </div>
-          </article>
-        </section>
-      </div>
+        <div class="content__wrapper">
+            <section class="profile">
+                <img class="profile__avatar" src="images/logo/kusto.jpg" alt="Аватарка" />
+                <div class="profile__info">
+                    <div class="profile__wrapper">
+                        <h1 class="profile__title">Жак-Ив Кусто</h1>
+                        <button class="profile__edit-button" type="button"></button>
+                    </div>
+                    <p class="profile__description">Исследователь океана</p>
+                </div>
+                <button class="profile__add-button" type="button"></button>
+            </section>
+            <!-- ============== elements ================== -->
+            <section class="elements">
+                <!-- <article class="element">
+                    <button type="button" class="element__trash"></button>
+                    <img class="element__img" src="images/content/Карелия.jpg" alt="Карелия" />
+                    <div class="element__description-container">
+                        <h2 class="element__description">Карелия</h2>
+                        <button class="element__like-button" type="button"></button>
+                    </div>
+                </article>
+                <article class="element">
+                    <button type="button" class="element__trash"></button>
+                    <img class="element__img" src="images/content/Байкал.jpg" alt="Байкал" />
+                    <div class="element__description-container">
+                        <h2 class="element__description">Байкал</h2>
+                        <button class="element__like-button" type="button"></button>
+                    </div>
+                </article>
+                <article class="element">
+                    <button type="button" class="element__trash"></button>
+                    <img class="element__img" src="images/content/Париж.jpg" alt="Париж" />
+                    <div class="element__description-container">
+                        <h2 class="element__description">Париж</h2>
+                        <button class="element__like-button" type="button"></button>
+                    </div>
+                </article>
+                <article class="element">
+                    <button type="button" class="element__trash"></button>
+                    <img class="element__img" src="images/content/Ростов-на-Дону.jpg" alt="Ростов-на-Дону" />
+                    <div class="element__description-container">
+                        <h2 class="element__description">Ростов-на-Дону</h2>
+                        <button class="element__like-button" type="button"></button>
+                    </div>
+                </article>
+                <article class="element">
+                    <button type="button" class="element__trash"></button>
+                    <img class="element__img" src="images/content/Сочи.jpeg" alt="Сочи" />
+                    <div class="element__description-container">
+                        <h2 class="element__description">Сочи</h2>
+                        <button class="element__like-button" type="button"></button>
+                    </div>
+                </article>
+                <article class="element">
+                    <button type="button" class="element__trash"></button>
+                    <img class="element__img" src="images/content/Алтай.jpg" alt="Алтай" />
+                    <div class="element__description-container">
+                        <h2 class="element__description">Алтай</h2>
+                        <button class="element__like-button" type="button"></button>
+                    </div>
+                </article> -->
+            </section>
+        </div>
+
+
     </main>
+
     <!-- =========== footer====================== -->
 
     <footer class="footer">
-      <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
+        <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
     </footer>
 
     <!-- =========== popup ====================== -->
 
-    <section class="popup">
-      <div class="popup__container">
-        <button class="popup__close" type="button"></button>
-        <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="popup__form" name="popup-form" action="#">
-          <fieldset class="popup__form-fieldset">
-            <label class="popup__form-field">
-              <input
-                name="name"
-                class="popup__input popup__input_type_name"
-                type="text"
-                placeholder="Имя "
-                value="Жак-Ив Кусто"
-                required
-              />
-            </label>
+    <section class="popup" id="popup">
+        <div class="popup__container">
+            <button class="popup__close" type="button"></button>
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <form class="popup__form" name="popup-form" action="#">
+                <fieldset class="popup__form-fieldset">
+                    <label class="popup__form-field">
+                        <input name="name" class="popup__input popup__input_type_name" type="text" placeholder="Имя "
+                            value="Жак-Ив Кусто" required />
+                    </label>
 
-            <label class="popup__form-field">
-              <input
-                name="about"
-                class="popup__input popup__input_type_about"
-                type="text"
-                placeholder="О себе"
-                value="Исследователь океана"
-                required
-              />
-            </label>
-            <button type="submit" class="popup__save-button">Сохранить</button>
-          </fieldset>
-        </form>
-      </div>
+                    <label class="popup__form-field">
+                        <input name="about" class="popup__input popup__input_type_about" type="text"
+                            placeholder="О себе" value="Исследователь океана" required />
+                    </label>
+                    <button type="submit" class="popup__save-button">Сохранить</button>
+                </fieldset>
+            </form>
+        </div>
+
     </section>
 
+    <!-- ================ popup add images =========================== -->
+    <section class="popup" id="popup-cards">
+        <div class=" popup__container">
+            <button class="popup__close popup__close_add_card" type="button"></button>
+            <h2 class="popup__title">Новое место</h2>
+            <form class="popup__form popup__form-card" name="form" action="#">
+                <fieldset class="popup__form-fieldset">
+                    <label class="popup__form-field">
+                        <input name="text" class="popup__input popup__input_type_name" id="text-input" type="text"
+                            placeholder="Название" required />
+                    </label>
+
+                    <label class="popup__form-field">
+                        <input name="url" class="popup__input popup__input_type_about" id="url-input" type="url"
+                            placeholder="Ссылка на картинку" required />
+                    </label>
+                    <button type="submit"
+                        class="popup__save-button popup__save-button_add_card popup__submit">Создать</button>
+                </fieldset>
+            </form>
+        </div>
+    </section>
+    <!-- ========== opened images ============================== -->
+    <section class="popup " id="popup_img">
+        <div class="popup__container popup__container-img">
+            <button class="popup__close popup__close_img_full" type="button">
+
+            </button>
+            <img class="popup__img-photo" src="#" alt="#" />
+            <p class="popup__img-caption"></p>
+        </div>
+    </section>
+
+    <!-- ================ tamplate =========================== -->
+    <template id="tamplate">
+        <article class="element">
+            <button type="button" class="element__trash"></button>
+            <img class="element__img" src="#" alt="#" />
+            <div class="element__description-container">
+                <h2 class="element__description"></h2>
+                <button class="element__like-button" type="button"></button>
+            </div>
+        </article>
+    </template>
+
     <script src="scripts/index.js"></script>
-  </body>
+</body>
+
 </html>
