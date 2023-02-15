@@ -1,6 +1,6 @@
 .elements__like-btn_active {
   border: none;
-  transition: opacity 0.3s linear;
+  transition: opacity .4s linear;
   background-image: url(../../../../images/icons/active.svg);
   background-repeat: no-repeat;
 

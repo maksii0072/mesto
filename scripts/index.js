@@ -13,8 +13,6 @@ const profileEditBtn = document.querySelector('.profile__edit-button'),
     profileDescription = document.querySelector('.profile__description'),
     profileAddBtn = document.querySelector('.profile__add-button');
 
-// **********************************************************************
-
 // ======= переменные для получения данных  popup add images===================
 
 const popupCards = document.querySelector('#popup-cards'),
@@ -26,8 +24,6 @@ const formElementCard = document.querySelector('.popup__form-card'),
     inputText = document.querySelector('#text-input'),
     inputUrl = document.querySelector('#url-input');
 
-// ***************************************************************************
-
 // ======= переменные для popup open images ===================
 
 const popupImages = document.querySelector('#popup_img'),
@@ -35,24 +31,10 @@ const popupImages = document.querySelector('#popup_img'),
     imagesCaption = document.querySelector('.popup__img-caption'),
     popupCloseBtnImageFull = document.querySelector('.popup__close_img_full');
 
-// ***************************************************************************
-
 // ================ переменные для template ==========================
-
 
 const tamplate = document.querySelector('#tamplate').content;
 const containerElements = document.querySelector('.elements');
-
-
-// descr = document.querySelector('.element__description'),
-
-
-// ***************************************************************************
-
-
-
-
-
 
 
 
@@ -63,17 +45,17 @@ const containerElements = document.querySelector('.elements');
 // ============== функции которые открывают закрывают popup =============== 
 
 
-function openPopup(popup) {
+const openPopup = (popup) => {
     popup.classList.add('popup_opened');
     // inputName.value = profileTitle.textContent;
     // inputAbout.value = profileDescription.textContent;
 }
 
-function closePopup(popup) {
+const closePopup = (popup) => {
     popup.classList.remove('popup_opened');
 }
 
-function handleFormSubmit(e) {
+const handleFormSubmit = (e) => {
     e.preventDefault();
     profileTitle.textContent = inputName.value;
     profileDescription.textContent = inputAbout.value;
@@ -107,14 +89,12 @@ const initialCards = [{
     }
 ];
 
-
+// ========================= Создание карточки ===============================
 
 const createCard = (item) => {
     const tamplateElem = tamplate.querySelector('.element').cloneNode(true);
-
     const elementImage = tamplateElem.querySelector('.element__img');
     const elementDescription = tamplateElem.querySelector('.element__description');
-
 
     elementImage.src = item.link;
     elementImage.alt = item.name;
@@ -148,7 +128,7 @@ popupCloseBtnImageFull.addEventListener('click', () => {
     closePopup(popupImages);
 })
 
-function addCard(item, container) {
+const addCard = (item, container) => {
     const newCard = createCard(item);
     container.prepend(newCard);
 }
@@ -159,7 +139,7 @@ initialCards.forEach(function (item) {
 });
 
 
-function cardFormSubmitHandler(e) {
+const cardFormSubmitHandler = (e) => {
     e.preventDefault();
     addCard(
         (item = {
