@@ -95,9 +95,9 @@
 
     <section class="popup" id="popup">
         <div class="popup__container">
-            <button class="popup__close" type="button"></button>
+            <button class="popup__close popup__close-profile" type="button"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="popup__form" name="popup-form" action="#">
+            <form class="popup__form" id="popup__form" name="popup-form" action="#">
                 <fieldset class="popup__form-fieldset">
                     <label class="popup__form-field">
                         <input name="name" class="popup__input popup__input_type_name" type="text" placeholder="Имя "
@@ -120,7 +120,7 @@
         <div class=" popup__container">
             <button class="popup__close popup__close_add_card" type="button"></button>
             <h2 class="popup__title">Новое место</h2>
-            <form class="popup__form popup__form-card" name="form" action="#">
+            <form class="popup__form popup__form-card" id="popup__form-card" name="form" action="#">
                 <fieldset class="popup__form-fieldset">
                     <label class="popup__form-field">
                         <input name="text" class="popup__input popup__input_type_name" id="text-input" type="text"
@@ -138,7 +138,7 @@
         </div>
     </section>
     <!-- ========== opened images ============================== -->
-    <section class="popup " id="popup_img">
+    <section class="popup popup__image " id="popup_img">
         <div class="popup__container popup__container-img">
             <button class="popup__close popup__close_img_full" type="button">
 

@@ -1,10 +1,10 @@
 //  ============== переменные popup info (profile) ===================
 
 const profilePopup = document.querySelector('#popup'),
-    popupCloseBtn = document.querySelector('.popup__close'),
+    popupCloseBtn = document.querySelector('.popup__close-profile'),
     saveBtn = document.querySelector('.popup__save-button');
 
-const formElement = document.querySelector('.popup__form'),
+const formElement = document.querySelector('#popup__form'),
     inputName = document.querySelector('.popup__input_type_name'),
     inputAbout = document.querySelector('.popup__input_type_about');
 
@@ -16,10 +16,10 @@ const profileEditBtn = document.querySelector('.profile__edit-button'),
 // ======= переменные для получения данных  popup add images===================
 
 const popupCards = document.querySelector('#popup-cards'),
+    popupFormCard = document.querySelector('#popup__form-card'),
     popupCloseBtnAdd = document.querySelector('.popup__close_add_card'),
     popupSaveBtnAdd = document.querySelector('.popup__save-button_add_card');
 
-// ===========  переменные  с form ===================
 const formElementCard = document.querySelector('.popup__form-card'),
     inputText = document.querySelector('#text-input'),
     inputUrl = document.querySelector('#url-input');
@@ -47,8 +47,8 @@ const containerElements = document.querySelector('.elements');
 
 const openPopup = (popup) => {
     popup.classList.add('popup_opened');
-    // inputName.value = profileTitle.textContent;
-    // inputAbout.value = profileDescription.textContent;
+    inputName.value = profileTitle.textContent;
+    inputAbout.value = profileDescription.textContent;
 }
 
 const closePopup = (popup) => {
@@ -59,7 +59,8 @@ const handleFormSubmit = (e) => {
     e.preventDefault();
     profileTitle.textContent = inputName.value;
     profileDescription.textContent = inputAbout.value;
-    closePopup();
+    closePopup(profilePopup);
+
 }
 // ==================== Массив с данными =======================
 
@@ -128,6 +129,8 @@ popupCloseBtnImageFull.addEventListener('click', () => {
     closePopup(popupImages);
 })
 
+
+
 const addCard = (item, container) => {
     const newCard = createCard(item);
     container.prepend(newCard);
@@ -148,17 +151,20 @@ const cardFormSubmitHandler = (e) => {
         }),
         containerElements
     )
-    document.querySelector('.popup__form').reset();
+    e.target.reset();
     closePopup(popupCards);
 };
 formElementCard.addEventListener("submit", cardFormSubmitHandler);
 
 
 formElement.addEventListener('submit', handleFormSubmit);
+
 profileEditBtn.addEventListener('click', () => {
+
     openPopup(profilePopup);
 });
 popupCloseBtn.addEventListener('click', () => {
+
     closePopup(profilePopup);
 
 });
