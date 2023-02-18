@@ -46,9 +46,9 @@ const containerElements = document.querySelector('.elements');
 
 
 const openPopup = (popup) => {
+
     popup.classList.add('popup_opened');
-    inputName.value = profileTitle.textContent;
-    inputAbout.value = profileDescription.textContent;
+
 }
 
 const closePopup = (popup) => {
@@ -160,7 +160,8 @@ formElementCard.addEventListener("submit", cardFormSubmitHandler);
 formElement.addEventListener('submit', handleFormSubmit);
 
 profileEditBtn.addEventListener('click', () => {
-
+    inputName.value = profileTitle.textContent;
+    inputAbout.value = profileDescription.textContent;
     openPopup(profilePopup);
 });
 popupCloseBtn.addEventListener('click', () => {
