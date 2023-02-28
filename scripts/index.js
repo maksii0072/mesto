@@ -1,10 +1,12 @@
 //  ============== переменные popup info (profile) ===================
 
 const profilePopup = document.querySelector('#popup'),
+    popupForm = document.querySelectorAll('.popup'),
     popupCloseBtn = document.querySelector('.popup__close-profile'),
     saveBtn = document.querySelector('.popup__save-button');
 
 const formElement = document.querySelector('#popup__form'),
+
     inputName = document.querySelector('.popup__input_type_name'),
     inputAbout = document.querySelector('.popup__input_type_about');
 
@@ -36,24 +38,44 @@ const popupImages = document.querySelector('#popup_img'),
 const tamplate = document.querySelector('#tamplate').content;
 const containerElements = document.querySelector('.elements');
 
+// ====================================================================================
 
 
 
 
+// ============== функция которая открывает popup =============== 
 
-
-// ============== функции которые открывают закрывают popup =============== 
-
-
-const openPopup = (popup) => {
-
+function openPopup (popup) {
     popup.classList.add('popup_opened');
+    document.body.style.overflow = 'hidden';
 
 }
+// ============== функция которая закрывает popup =============== 
 
-const closePopup = (popup) => {
+function closePopup (popup) {
     popup.classList.remove('popup_opened');
+    document.body.style.overflow = '';
+
+    
 }
+
+
+popupForm.forEach(item => {
+    document.addEventListener('keydown',(e) => {
+        if(e.key === 'Escape' && item.classList.contains('popup_opened')) {
+            closePopup(popup);
+        }
+    })
+})
+
+
+// popupForm.addEventListener('click',(e) => {
+//   if(e.target === popup ) {
+//     closePopup(popup);
+//   }
+// })
+
+
 
 const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -122,19 +144,26 @@ const createCard = (item) => {
 
             openPopup(popupImages);
         })
+
+    popupCloseBtnImageFull.addEventListener('click', () => {
+        closePopup(popupImages);
+    })
     return tamplateElem;
+
 };
 
-popupCloseBtnImageFull.addEventListener('click', () => {
-    closePopup(popupImages);
-})
 
+
+
+// ========================= функция добавления карточки ===============================
 
 
 const addCard = (item, container) => {
     const newCard = createCard(item);
     container.prepend(newCard);
 }
+
+// ========================= перебор массива ===============================
 
 initialCards.forEach(function (item) {
     addCard(item, containerElements);
@@ -164,15 +193,16 @@ profileEditBtn.addEventListener('click', () => {
     inputAbout.value = profileDescription.textContent;
     openPopup(profilePopup);
 });
-popupCloseBtn.addEventListener('click', () => {
 
-    closePopup(profilePopup);
+// ========================= обработчик собития ===============================
 
-});
-// ========================================================
 profileAddBtn.addEventListener('click', () => {
     openPopup(popupCards);
 });
 popupCloseBtnAdd.addEventListener('click', () => {
     closePopup(popupCards);
+});
+popupCloseBtn.addEventListener('click', () => {
+    closePopup(profilePopup);
+
 });

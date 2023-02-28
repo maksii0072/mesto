@@ -100,13 +100,15 @@
             <form class="popup__form" id="popup__form" name="popup-form" action="#">
                 <fieldset class="popup__form-fieldset">
                     <label class="popup__form-field">
-                        <input name="name" class="popup__input popup__input_type_name" type="text" placeholder="Имя "
-                            value="Жак-Ив Кусто" required />
+                        <input minlength="2" maxlength="40" name="name" class="popup__input popup__input_type_name"
+                            type="text" placeholder="Имя " value="Жак-Ив Кусто" required />
+                        <span class="popup__input-error name-input-error">asdasdsadasd</span>
                     </label>
 
                     <label class="popup__form-field">
-                        <input name="about" class="popup__input popup__input_type_about" type="text"
-                            placeholder="О себе" value="Исследователь океана" required />
+                        <input minlength="2" maxlength="200" name="about" class="popup__input popup__input_type_about"
+                            type="text" placeholder="О себе" value="Исследователь океана" required />
+                        <span class="popup__input-error about-input-error"></span>
                     </label>
                     <button type="submit" class="popup__save-button">Сохранить</button>
                 </fieldset>
@@ -123,13 +125,15 @@
             <form class="popup__form popup__form-card" id="popup__form-card" name="form" action="#">
                 <fieldset class="popup__form-fieldset">
                     <label class="popup__form-field">
-                        <input name="text" class="popup__input popup__input_type_name" id="text-input" type="text"
-                            placeholder="Название" required />
+                        <input minlength="2" maxlength="40" name="text" class="popup__input popup__input_type_name"
+                            id="text-input" type="text" placeholder="Название" required />
+                        <span class="popup__input-error place-input-error"></span>
                     </label>
 
                     <label class="popup__form-field">
-                        <input name="url" class="popup__input popup__input_type_about" id="url-input" type="url"
-                            placeholder="Ссылка на картинку" required />
+                        <input minlength="3" name="url" class="popup__input popup__input_type_about" id="url-input"
+                            type="url" placeholder="Ссылка на картинку" required />
+                        <span class="popup__input-error url-input-error"></span>
                     </label>
                     <button type="submit"
                         class="popup__save-button popup__save-button_add_card popup__submit">Создать</button>
@@ -138,7 +142,8 @@
         </div>
     </section>
     <!-- ========== opened images ============================== -->
-    <section class="popup popup_image " id="popup_img">
+    <!-- popup_image  -->
+    <section class="popup " id="popup_img">
         <div class="popup__container popup__container-img">
             <button class="popup__close popup__close_img_full" type="button">
 
@@ -159,7 +164,7 @@
             </div>
         </article>
     </template>
-
+    <script src="scripts/validate.js"></script>
     <script src="scripts/index.js"></script>
 </body>
 
