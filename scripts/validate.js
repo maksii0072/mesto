@@ -12,6 +12,11 @@ function disableSubmit(e) {
         e.preventDefault();
     })
 }
+/**
+ * функция получает формы после чего производится взоимодействие с ними
+ *
+ * @param {*} config 
+ */
 
 function enableValidatuion(config) {
     const formList = Array.from(document.querySelectorAll(config.formSelector));
@@ -25,7 +30,11 @@ function enableValidatuion(config) {
     })
 
 }
-
+/**
+ * Функция обработчик которая делает проверку input  после чего добавляет класс ошибки 
+ * @param {*} e 
+ * @param {*} config 
+ */
 
 function handleFormInput(e, config) {
     const input = e.target;
@@ -44,7 +53,11 @@ function handleFormInput(e, config) {
 
 
 }
-
+/**
+ * Функция которая  делает проверку на валидность формы после чего делвет ее активной или не активной
+ * @param {*} form 
+ * @param {*} config 
+ */
 function toggleButton(form, config) {
     const buttonSubmit = form.querySelector(config.buttonSelector);
     const isFormValid = form.checkValidity();
@@ -52,7 +65,11 @@ function toggleButton(form, config) {
     buttonSubmit.classList.toggle(config.buttonDisabledClass, !isFormValid);
 
 }
-
+/**
+ * Функция которая добавляет input(м) слушатель
+ * @param {*} form 
+ * @param {*} config 
+ */
 function addInputLisners(form, config) {
     const inputList = Array.from(form.querySelectorAll(config.inputSelector));
     inputList.forEach((item) => {
