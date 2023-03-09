@@ -1,17 +1,42 @@
+ // ==================== Массив с данными =======================
+
+ const initialCards = [{
+    name: 'Горный Алтай',
+    link: 'https://w-dog.ru/wallpapers/9/19/531620289590164/ozero-nebo-voda-les-gory-otrazhenie-novaya-zelandiya.jpg'
+},
+{
+    name: 'Карелия',
+    link: 'https://mayel.ru/wp-content/uploads/2020/10/winter.jpg'
+},
+{
+    name: 'Норвегия',
+    link: 'https://img1.fonwall.ru/o/al/sea-water-ocean-architecture-iwsh.jpeg?route=mid&h=750'
+},
+{
+    name: 'Нью-Йорк',
+    link: 'https://img1.fonwall.ru/o/dw/architecture-skyline-building-city-itar.jpeg?route=mid&h=750'
+},
+{
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+},
+{
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+}
+];
+
 window.addEventListener('DOMContentLoaded', () => {
 
 
     //  ============== переменные popup info (profile) ===================
     const profilePopup = document.querySelector('#popup'),
-        popups = document.querySelectorAll('.popup'),
-        popupClose = document.querySelector('.popup__close'),
-        popupCloseBtn = document.querySelector('.popup__close-profile'),
-        saveBtn = document.querySelector('.popup__save-button');
+        allPopups = document.querySelectorAll('.popup'),
+        popupCloseProfileBtn = document.querySelector('.popup__close-profile');
 
-    const formElement = document.querySelector('#popup__form'),
-
-        inputName = document.querySelector('.popup__input_type_name'),
-        inputAbout = document.querySelector('.popup__input_type_about');
+    const elementFormPopup = document.querySelector('#popup__form'),
+        inputNameForm = document.querySelector('.popup__input_type_name'),
+        inputAboutForm = document.querySelector('.popup__input_type_about');
 
     const profileEditBtn = document.querySelector('.profile__edit-button'),
         profileTitle = document.querySelector('.profile__title'),
@@ -21,13 +46,11 @@ window.addEventListener('DOMContentLoaded', () => {
     // ======= переменные для получения данных  popup add images===================
 
     const popupCards = document.querySelector('#popup-cards'),
-        popupFormCard = document.querySelector('#popup__form-card'),
-        popupCloseBtnAdd = document.querySelector('.popup__close_add_card'),
-        popupSaveBtnAdd = document.querySelector('.popup__save-button_add_card');
+        popupCloseBtnAdd = document.querySelector('.popup__close_add_card');
 
     const formElementCard = document.querySelector('.popup__form-card'),
-        inputText = document.querySelector('.popup__input_type_link-name'),
-        inputUrl = document.querySelector('.popup__input_type_link-url');
+        inputTextForm = document.querySelector('.popup__input_type_link-name'),
+        inputUrlForm = document.querySelector('.popup__input_type_link-url');
 
     // ======= переменные для popup open images ===================
 
@@ -69,7 +92,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     }
 
-    popups.forEach((item) => {
+    allPopups.forEach((item) => {
         item.addEventListener('click', (e) => {
             if ( e.target.classList.contains('popup') || e.target.classList.contains('popup__close')  ) {
                 closePopup(item);
@@ -80,40 +103,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-    const handleFormSubmit = (e) => {
+    const handleFormProfileSubmit = (e) => {
         e.preventDefault();
-        profileTitle.textContent = inputName.value;
-        profileDescription.textContent = inputAbout.value;
+        profileTitle.textContent = inputNameForm.value;
+        profileDescription.textContent = inputAboutForm.value;
         closePopup(profilePopup);
 
     }
-    // ==================== Массив с данными =======================
-
-    const initialCards = [{
-            name: 'Горный Алтай',
-            link: 'https://w-dog.ru/wallpapers/9/19/531620289590164/ozero-nebo-voda-les-gory-otrazhenie-novaya-zelandiya.jpg'
-        },
-        {
-            name: 'Сибирь',
-            link: 'https://kartinkin.net/uploads/posts/2022-03/1647061399_70-kartinkin-net-p-samii-krasivii-kartinki-85.jpg'
-        },
-        {
-            name: 'Норвегия',
-            link: 'https://img1.fonwall.ru/o/al/sea-water-ocean-architecture-iwsh.jpeg?route=mid&h=750'
-        },
-        {
-            name: 'Нью-Йорк',
-            link: 'https://img1.fonwall.ru/o/dw/architecture-skyline-building-city-itar.jpeg?route=mid&h=750'
-        },
-        {
-            name: 'Холмогорский район',
-            link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-        },
-        {
-            name: 'Байкал',
-            link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-        }
-    ];
+   
 
     // ========================= Создание карточки ===============================
 
@@ -148,15 +145,13 @@ window.addEventListener('DOMContentLoaded', () => {
                 openPopup(popupImages);
             })
 
-        popupCloseBtnImageFull.addEventListener('click', () => {
-            closePopup(popupImages);
-        })
         return tamplateElem;
 
     };
-
-
-
+    
+    popupCloseBtnImageFull.addEventListener('click', () => {
+        closePopup(popupImages);
+    })
 
     // ========================= функция добавления карточки ===============================
 
@@ -178,34 +173,42 @@ window.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         addCard(
             (item = {
-                name: inputText.value,
-                link: inputUrl.value
+                name: inputTextForm.value,
+                link: inputUrlForm.value
             }),
             containerElements
         )
         e.target.reset();
         closePopup(popupCards);
+        toggleButton(form, formValidationConfig);
+
+    
+        
     };
     formElementCard.addEventListener("submit", cardFormSubmitHandler);
 
 
-    formElement.addEventListener('submit', handleFormSubmit);
+    elementFormPopup.addEventListener('submit', handleFormProfileSubmit);
 
     profileEditBtn.addEventListener('click', () => {
-        inputName.value = profileTitle.textContent;
-        inputAbout.value = profileDescription.textContent;
+        inputNameForm.value = profileTitle.textContent;
+        inputAboutForm.value = profileDescription.textContent;
         openPopup(profilePopup);
+     
     });
 
     // ========================= обработчик собития ===============================
 
     profileAddBtn.addEventListener('click', () => {
         openPopup(popupCards);
+
+        
+
     });
     popupCloseBtnAdd.addEventListener('click', () => {
         closePopup(popupCards);
     });
-    popupCloseBtn.addEventListener('click', () => {
+    popupCloseProfileBtn.addEventListener('click', () => {
         closePopup(profilePopup);
 
     });
