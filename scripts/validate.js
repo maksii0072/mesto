@@ -7,11 +7,7 @@ const formValidationConfig = {
 
 }
 
-function disableSubmit(e) {
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-    })
-}
+
 /**
  * функция получает формы после чего производится взоимодействие с ними
  *
@@ -21,7 +17,9 @@ function disableSubmit(e) {
 function enableValidatuion(config) {
     const formList = Array.from(document.querySelectorAll(config.formSelector));
     formList.forEach(form => {
-        form.addEventListener('submit', disableSubmit);
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+        });
         form.addEventListener('input', () => {
             toggleButton(form, config);
         })

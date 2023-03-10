@@ -180,7 +180,7 @@ window.addEventListener('DOMContentLoaded', () => {
         )
         e.target.reset();
         closePopup(popupCards);
-        toggleButton(form, formValidationConfig);
+        toggleButton(formElementCard, formValidationConfig);
 
     
         
