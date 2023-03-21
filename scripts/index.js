@@ -1,38 +1,21 @@
- // ==================== Массив с данными =======================
-
- const initialCards = [{
-    name: 'Горный Алтай',
-    link: 'https://w-dog.ru/wallpapers/9/19/531620289590164/ozero-nebo-voda-les-gory-otrazhenie-novaya-zelandiya.jpg'
-},
-{
-    name: 'Карелия',
-    link: 'https://mayel.ru/wp-content/uploads/2020/10/winter.jpg'
-},
-{
-    name: 'Норвегия',
-    link: 'https://img1.fonwall.ru/o/al/sea-water-ocean-architecture-iwsh.jpeg?route=mid&h=750'
-},
-{
-    name: 'Нью-Йорк',
-    link: 'https://img1.fonwall.ru/o/dw/architecture-skyline-building-city-itar.jpeg?route=mid&h=750'
-},
-{
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-},
-{
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-}
-];
+import Card from './Card.js';
+import {
+    FormValidator
+} from './FormValidator.js';
+import {
+    formValidationConfig
+} from '../components/formValidationConfig.js';
+import {
+    initialCards
+} from '../components/initialCards.js';
 
 window.addEventListener('DOMContentLoaded', () => {
 
 
     //  ============== переменные popup info (profile) ===================
-    const profilePopup = document.querySelector('#popup'),
+    const profilePopup = document.querySelector('#popup_type-profile'),
         allPopups = document.querySelectorAll('.popup'),
-        popupCloseProfileBtn = document.querySelector('.popup__close-profile');
+        btnPopupСloses = document.querySelectorAll('.popup__close');
 
     const elementFormPopup = document.querySelector('#popup__form'),
         inputNameForm = document.querySelector('.popup__input_type_name'),
@@ -43,40 +26,42 @@ window.addEventListener('DOMContentLoaded', () => {
         profileDescription = document.querySelector('.profile__description'),
         profileAddBtn = document.querySelector('.profile__add-button');
 
-    // ======= переменные для получения данных  popup add images===================
+    const formElementCard = document.querySelector('#popup__form-card');
+    const addPopupCards = document.querySelector('#popup-cards');
 
-    const popupCards = document.querySelector('#popup-cards'),
-        popupCloseBtnAdd = document.querySelector('.popup__close_add_card');
-
-    const formElementCard = document.querySelector('.popup__form-card'),
-        inputTextForm = document.querySelector('.popup__input_type_link-name'),
+        const inputTextForm = document.querySelector('.popup__input_type_link-name'),
         inputUrlForm = document.querySelector('.popup__input_type_link-url');
 
     // ======= переменные для popup open images ===================
 
     const popupImages = document.querySelector('#popup_img'),
         images = document.querySelector('.popup__img-photo'),
-        imagesCaption = document.querySelector('.popup__img-caption'),
-        popupCloseBtnImageFull = document.querySelector('.popup__close_img_full');
+        imagesCaption = document.querySelector('.popup__img-caption');
 
-    // ================ переменные для template ==========================
 
-    const tamplate = document.querySelector('#tamplate').content;
     const containerElements = document.querySelector('.elements');
 
-    // ====================================================================================
+
+// ===============================================================
+
+    const popupEditProfileValidation = new FormValidator(formValidationConfig, profilePopup)
+    popupEditProfileValidation.enableValidation()
+
+    const popupAddCardValidation = new FormValidator(
+        formValidationConfig,
+        addPopupCards
+    )
+    popupAddCardValidation.enableValidation()
 
 
-
-    // ============== функция которая открывает popup =============== 
-
+    //  Open popup 
     function openPopup(popup) {
         popup.classList.add('popup_opened');
         document.body.style.overflow = 'hidden';
         document.addEventListener('keydown', handlerEscClose)
     }
-    // ============== функция которая закрывает popup =============== 
 
+    // Close popup
     function closePopup(popup) {
         popup.classList.remove('popup_opened');
         document.body.style.overflow = '';
@@ -94,7 +79,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     allPopups.forEach((item) => {
         item.addEventListener('click', (e) => {
-            if ( e.target.classList.contains('popup') || e.target.classList.contains('popup__close')  ) {
+            if (e.target.classList.contains('popup') || e.target.classList.contains('popup__close')) {
                 closePopup(item);
 
             }
@@ -103,114 +88,71 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-    const handleFormProfileSubmit = (e) => {
+    const updateProfileData = (e) => {
         e.preventDefault();
         profileTitle.textContent = inputNameForm.value;
         profileDescription.textContent = inputAboutForm.value;
+        popupEditProfileValidation.disableSubmitButton()
         closePopup(profilePopup);
-
-    }
-   
-
-    // ========================= Создание карточки ===============================
-
-    const createCard = (item) => {
-        const tamplateElem = tamplate.querySelector('.element').cloneNode(true);
-        const elementImage = tamplateElem.querySelector('.element__img');
-        const elementDescription = tamplateElem.querySelector('.element__description');
-
-        elementImage.src = item.link;
-        elementImage.alt = item.name;
-        elementDescription.textContent = item.name;
-
-        tamplateElem
-            .querySelector('.element__like-button')
-            .addEventListener('click', (e) => {
-                const target = e.target;
-                target.classList.toggle('elements__like-btn_active')
-            });
-        tamplateElem
-            .querySelector('.element__trash')
-            .addEventListener('click', (e) => {
-                const target = e.target;
-                target.closest('.element').remove();
-
-            });
-        elementImage
-            .addEventListener('click', () => {
-                images.src = item.link;
-                images.alt = item.name;
-                imagesCaption.textContent = item.name;
-
-                openPopup(popupImages);
-            })
-
-        return tamplateElem;
-
     };
-    
-    popupCloseBtnImageFull.addEventListener('click', () => {
-        closePopup(popupImages);
-    })
 
-    // ========================= функция добавления карточки ===============================
+    // popup close Buttons================================
+    btnPopupСloses.forEach((btn) => btn.addEventListener("click", evt => closePopup(evt.target.closest('.popup'))));
 
-
-    const addCard = (item, container) => {
-        const newCard = createCard(item);
-        container.prepend(newCard);
-    }
-
-    // ========================= перебор массива ===============================
-
-    initialCards.forEach(function (item) {
-        addCard(item, containerElements);
-
-    });
-
-
-    const cardFormSubmitHandler = (e) => {
-        e.preventDefault();
-        addCard(
-            (item = {
-                name: inputTextForm.value,
-                link: inputUrlForm.value
-            }),
-            containerElements
-        )
-        e.target.reset();
-        closePopup(popupCards);
-        toggleButton(formElementCard, formValidationConfig);
-
-    
-        
-    };
-    formElementCard.addEventListener("submit", cardFormSubmitHandler);
-
-
-    elementFormPopup.addEventListener('submit', handleFormProfileSubmit);
-
+    // popup Open Buttons
     profileEditBtn.addEventListener('click', () => {
         inputNameForm.value = profileTitle.textContent;
         inputAboutForm.value = profileDescription.textContent;
         openPopup(profilePopup);
-     
     });
-
-    // ========================= обработчик собития ===============================
-
     profileAddBtn.addEventListener('click', () => {
-        openPopup(popupCards);
-
-        
-
-    });
-    popupCloseBtnAdd.addEventListener('click', () => {
-        closePopup(popupCards);
-    });
-    popupCloseProfileBtn.addEventListener('click', () => {
-        closePopup(profilePopup);
-
+        openPopup(addPopupCards);
+        formElementCard.reset();
+        popupAddCardValidation.disableSubmitButton()
     });
 
-});
+    profilePopup.addEventListener('submit', updateProfileData);
+
+
+    function openImage(card, link) {
+        images.src = link;
+        images.alt = card;
+        imagesCaption.textContent = card;
+
+        openPopup(popupImages);
+    }
+
+    // -------- New Card (Экземпляр) ---------
+
+    function createCard(value) {
+        const card = new Card(value, '.card__template', openImage).generateCard()
+        return card
+    }
+
+
+    function renderCard(card, containerElements) {
+        containerElements.prepend(card);
+    }
+
+    function render() {
+        initialCards.reverse().forEach((value) => {
+            const newCard = createCard(value)
+            if (newCard) renderCard(newCard, containerElements)
+        })
+    }
+    render()
+
+
+    elementFormPopup.addEventListener("submit", (e) => {
+        e.preventDefault()
+        const name = inputTextForm.value
+        const link = inputUrlForm.value
+        const newCard = createCard({
+            name,
+            link
+        })
+        if (newCard) renderCard(newCard, containerElements)
+
+        closePopup(addPopupCards)
+    })
+})
