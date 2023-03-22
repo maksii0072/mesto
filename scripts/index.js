@@ -143,7 +143,7 @@ window.addEventListener('DOMContentLoaded', () => {
     render()
 
 
-    elementFormPopup.addEventListener("submit", (e) => {
+    addPopupCards.addEventListener("submit", (e) => {
         e.preventDefault()
         const name = inputTextForm.value
         const link = inputUrlForm.value

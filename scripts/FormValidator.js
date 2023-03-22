@@ -1,4 +1,3 @@
-
 class FormValidator {
     constructor(config, form) {
         this._form = form
@@ -72,4 +71,6 @@ class FormValidator {
     }
 }
 
-export { FormValidator }
+export {
+    FormValidator
+}
