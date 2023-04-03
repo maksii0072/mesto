@@ -14,11 +14,10 @@ export default class UserInfo {
 
 
 
-  setUserInfo(item) {
-    this._name.textContent = item.name;
-    this._about.textContent = item.about;
-    
+  setUserInfo({name, about}) {
+    this._name.textContent = name;
+    this._about.textContent = about;
   }
-
-
 }
+
+
