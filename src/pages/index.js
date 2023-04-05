@@ -1,4 +1,4 @@
-// import '../pages/index.css';
+import '../pages/index.css';
 import {
     Card
 } from '../components/Card.js';
@@ -61,7 +61,7 @@ cardSection.setItems();
 function newCard(item) {
     const card = new Card ({title: item.name, link: item.link, handleCardClick: () => {
       popupWithImage.open(item);
-    }}, '.card__template')
+    }}, '.template')
     const generatedCard = card.createCard();
     return generatedCard;
   }
@@ -73,6 +73,7 @@ function newCard(item) {
     ProfileValidation.setButtonStateActive();
     ProfileValidation.clearErrors();
     popupWithProfile.open();
+
 };
 
 function showPopupCard() {
@@ -86,5 +87,6 @@ const CardValidation = new FormValidator(formElementCard,formValidationConfig,
     );
 ProfileValidation.enableValidation();
 CardValidation.enableValidation();
+
 addBatton.addEventListener('click', showPopupCard);
 editBatton.addEventListener('click', showPopupProfile);

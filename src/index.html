@@ -5,21 +5,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="pages/index.css" />
+    <!-- <link rel="stylesheet" href="pages/index.css" /> -->
     <title>Место</title>
 </head>
 
 <body class="page">
     <!-- =========== header ====================== -->
     <header class="header">
-        <img class="header__logo" src="images/logo/logo.svg " alt="Логотип_Место" />
+        <img class="header__logo" src="<%=require('./images/logo/logo.svg')%>" alt="Логотип_Место" />
     </header>
 
     <!-- ====================== profile ======================= -->
     <main class="content">
         <div class="content__wrapper">
             <section class="profile">
-                <img class="profile__avatar" src="images/logo/kusto.jpg" alt="Аватарка" />
+                <img class="profile__avatar" src="<%=require('./images/logo/kusto.jpg')%>" alt="Аватарка" />
                 <div class="profile__info">
                     <div class="profile__wrapper">
                         <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -63,7 +63,7 @@
                         autocomplete="off"
                         name="name"
                         class="popup__input popup__input_type_name"
-                        type="text 
+                        type="text"
                         placeholder="Имя"
                         value="Жак-Ив Кусто" 
                         required 
@@ -148,7 +148,7 @@
     </section>
 
     <!-- ================ tamplate =========================== -->
-    <template class="card__template" id="tamplate">
+    <template class="template" id="tamplate">
         <article class="element">
             <button type="button" class="element__trash"></button>
             <img class="element__img" src="#" alt="#" />
@@ -159,13 +159,13 @@
         </article>
     </template>
 
-    <script type="module" src="../src/pages/index.js"></script>
+    <!-- <script type="module" src="../src/pages/index.js"></script>
   <script type="module" src="../src/components/FormValidator.js"></script>
   <script type="module" src="../src/components/Card.js"></script>
   <script type="module" src="../src/components/Popup.js"></script> <script type="module" src="../src/components/PopupWithForm.js"></script> <script type="module" src="../src/components/PopupWithImage.js"></script>
   <script type="module" src="../src/components/UserInfo.js"></script>
   <script type="module" src="../src/components/Section.js"></script>
-  <script type="module" src="../src/utils/Constants.js"></script> 
+  <script type="module" src="../src/utils/Constants.js"></script>  -->
 </body>
 
 </html>

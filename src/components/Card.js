@@ -39,7 +39,7 @@ export class Card {
         this._cardImage.alt = this._title;
         this._cardTitle.textContent = this._title;
         this._setEventListeners();
-        
+       
         return this._element;
 
     }
