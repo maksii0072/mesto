@@ -21,12 +21,12 @@ export class Card {
         e.target.closest('.element').remove();
     }
 
-    _addLike(e) {
+    _toggleLike(e) {
         e.target.classList.toggle('elements__like-btn_active');
     }
 
     _setEventListeners() {
-        this._element.querySelector('.element__like-button').addEventListener('click', this._addLike);
+        this._element.querySelector('.element__like-button').addEventListener('click', this._toggleLike);
         this._element.querySelector('.element__trash').addEventListener('click', this._deleteCard);
         this._cardImage.addEventListener('click', this._handleCardClick);
     }

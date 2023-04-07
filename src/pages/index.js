@@ -45,22 +45,22 @@ popupWithProfile.setEventListeners();
 
 const popupCreateCard = new PopupWithForm({popupSelector: '#popup-cards',
 handlerSubmit: (item) => {
-  const card = newCard(item);
+  const card = createNewCard(item);
   cardSection.addItem(card);
 }})
 
 popupCreateCard.setEventListeners();
 
 const cardSection = new Section({items: initialCards, renderer: (item) => {
-  const card = newCard(item);
+  const card = createNewCard(item);
   cardSection.addItem(card);
 }}, '.elements')
 
 cardSection.setItems();
 
-function newCard(item) {
+function createNewCard(item) {
     const card = new Card ({title: item.name, link: item.link, handleCardClick: () => {
-      popupWithImage.open(item);
+      popupWithImage.openPopup(item);
     }}, '.template')
     const generatedCard = card.createCard();
     return generatedCard;
@@ -70,23 +70,23 @@ function newCard(item) {
     const user = userData.getUserInfo();
     inputNameForm.value = user.name;
     inputAboutForm.value = user.about;
-    ProfileValidation.setButtonStateActive();
-    ProfileValidation.clearErrors();
-    popupWithProfile.open();
+    profileValidation.setButtonStateActive();
+    profileValidation.clearErrors();
+    popupWithProfile.openPopup();
 
 };
 
 function showPopupCard() {
-  popupCreateCard.open();
+  popupCreateCard.openPopup();
 };
 
 
-const ProfileValidation = new FormValidator(profileForm,formValidationConfig,
+const profileValidation = new FormValidator(profileForm,formValidationConfig,
     );
-const CardValidation = new FormValidator(formElementCard,formValidationConfig,
+const cardValidation = new FormValidator(formElementCard,formValidationConfig,
     );
-ProfileValidation.enableValidation();
-CardValidation.enableValidation();
+profileValidation.enableValidation();
+cardValidation.enableValidation();
 
 addBatton.addEventListener('click', showPopupCard);
 editBatton.addEventListener('click', showPopupProfile);
