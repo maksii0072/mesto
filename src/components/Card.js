@@ -48,10 +48,10 @@ export class Card {
     
       likeState() {
         if(this.ownLike()) {
-          this._cardLikeButton.classList.add('photos__like-button_active');
+          this._cardLikeButton.classList.add('elements__like-btn_active');
         }
         else {
-          this._cardLikeButton.classList.remove('photos__like-button_active');
+          this._cardLikeButton.classList.remove('elements__like-btn_active');
         }
       }
     
@@ -71,10 +71,10 @@ export class Card {
     
       _checkTrashButton() {
         if(this._userId !== this._ownerId) {
-          this._deleteButton.classList.add('photos__delete-button_inactive');
+          this._deleteButton.classList.add('popup__save-button_inactive');
         }
         else {
-          this._deleteButton.classList.remove('photos__delete-button_inactive');
+          this._deleteButton.classList.remove('popup__save-button_inactive');
         }
       }
 

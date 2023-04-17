@@ -17,7 +17,7 @@
             formElementCard = document.querySelector('#popup__form-card'),
             editAvatarButton = document.querySelector('.profile__avatar-button'),
             avatarForm = document.querySelector('.popup__form-avatar'),
-            deleteButton = document.querySelector('.photos__delete-button');
+            deleteButton = document.querySelector('.element__trash');
             
     export {
         editBatton,

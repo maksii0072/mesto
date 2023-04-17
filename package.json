@@ -1,7 +1,7 @@
 {
-  "name": "mesto",
+  "name": "Yandex Praktikum",
   "version": "1.0.0",
-  "description": "### В Проекте использовались такие техналогии как:",
+  "description": "Lerning platform",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
@@ -13,12 +13,12 @@
     "type": "git",
     "url": "git+https://github.com/maksii0072/mesto.git"
   },
-  "author": "",
+  "author": "Dolya Maksim",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/maksii0072/mesto/issues"
   },
-  "homepage": "https://github.com/maksii0072/mesto#readme",
+  "homepage": " https://maksii0072.github.io/mesto",
   "devDependencies": {
     "@babel/core": "^7.21.4",
     "@babel/preset-env": "^7.21.4",
