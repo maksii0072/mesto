@@ -14,8 +14,11 @@
             inputAboutForm = document.querySelector('.popup__input_type_about'),
             profileForm = document.querySelector('.popup__form'),
             addPopupCards = document.querySelector('#popup-cards'),
-            formElementCard = document.querySelector('#popup__form-card');
-
+            formElementCard = document.querySelector('#popup__form-card'),
+            editAvatarButton = document.querySelector('.profile__avatar-button'),
+            avatarForm = document.querySelector('.popup__form-avatar'),
+            deleteButton = document.querySelector('.photos__delete-button');
+            
     export {
         editBatton,
         addBatton,
@@ -24,36 +27,8 @@
         inputAboutForm,
         profileForm,
         formElementCard,
-        addPopupCards
+        addPopupCards,
+        deleteButton,
+        avatarForm,
+        editAvatarButton
     };
-
-    // ==================== Массив с данными =======================
-
- export const initialCards = [{
-    name: 'Горный Алтай',
-    link: 'https://w-dog.ru/wallpapers/9/19/531620289590164/ozero-nebo-voda-les-gory-otrazhenie-novaya-zelandiya.jpg'
-},
-{
-    name: 'Карелия',
-    link: 'https://mayel.ru/wp-content/uploads/2020/10/winter.jpg'
-},
-{
-    name: 'Норвегия',
-    link: 'https://img1.fonwall.ru/o/al/sea-water-ocean-architecture-iwsh.jpeg?route=mid&h=750'
-},
-{
-    name: 'Нью-Йорк',
-    link: 'https://img1.fonwall.ru/o/dw/architecture-skyline-building-city-itar.jpeg?route=mid&h=750'
-},
-{
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-},
-{
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-}
-];
-
-
-
