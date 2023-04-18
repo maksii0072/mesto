@@ -185,7 +185,7 @@ const profileValidation = new FormValidator(profileForm,formValidationConfig,
     );
 const cardValidation = new FormValidator(formElementCard,formValidationConfig,
     );
-const AvatarValidation = new FormValidator(avatarForm, validationConfig);
+const AvatarValidation = new FormValidator(avatarForm, formValidationConfig);
 
 profileValidation.enableValidation();
 cardValidation.enableValidation();

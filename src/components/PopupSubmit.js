@@ -25,8 +25,8 @@ export default class PopupSubmit extends Popup {
 
   }
 
-  open(element) {
+  openPopup(element) {
     this._element = element;
-    super.open();
+    super.openPopup();
   }  
 }
