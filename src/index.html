@@ -2,9 +2,9 @@
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="pages/index.css" /> -->
     <title>Место</title>
 </head>
@@ -12,7 +12,7 @@
 <body class="page">
     <!-- =========== header ====================== -->
     <header class="header">
-        <img class="header__logo" src="<%=require('./images/logo/logo.svg')%>" alt="Логотип_Место" />
+        <img class="header__logo" src="<%=require('./images/logo/logo.svg')%>" alt="Логотип_Место">
     </header>
 
     <!-- ====================== profile ======================= -->
@@ -35,7 +35,7 @@
                 <button class="profile__add-button" type="button"></button>
             </section>
             <!-- ============== elements ================== -->
-            <section class="elements"></section>
+            <div class="elements"></div>
         </div>
 
     </main>
@@ -72,7 +72,7 @@
                         placeholder="Имя"
                         value="Жак-Ив Кусто" 
                         required 
-                        />
+                        >
                         <span id="input-name-error" class="popup__input-error input-name-error"></span>
                     </label>
 
@@ -87,7 +87,7 @@
                         type="text" 
                         placeholder="О себе" 
                         value="Исследователь океана" 
-                        required />
+                        required>
                         <span id="input-about-error" class="popup__input-error about-input-error"></span>
                     </label>
                     <button type="submit" class="popup__save-button ">Сохранить</button>
@@ -106,9 +106,9 @@
             novalidate
             class="popup__form popup__form-card" 
             id="popup__form-card" 
-            name="form" >
-
-                    <fieldset class="popup__form-fieldset">
+            name="form" 
+>
+                <fieldset class="popup__form-fieldset">
                     <label class="popup__form-field">
                         <input 
                         minlength="2" 
@@ -119,7 +119,7 @@
                         id="input-link-name" 
                         type="text" 
                         placeholder="Название" 
-                        required />
+                        required>
                         <span id="input-link-name-error" class="popup__input-error place-input-error"></span>
                     </label>
 
@@ -131,7 +131,7 @@
                         id="input-link-url"
                         type="url" 
                         placeholder="Ссылка на картинку" 
-                        required />
+                        required >
                         <span id="input-link-url-error" class="popup__input-error url-input-error"></span>
                     </label>
                     <button type="submit"
@@ -147,7 +147,7 @@
             <button class="popup__close popup__close_img_full" type="button">
 
             </button>
-            <img class="popup__img-photo" src="#" alt="#" />
+            <img class="popup__img-photo" src="#" alt="#" >
             <p class="popup__img-caption"></p>
         </div>
     </div>
@@ -185,7 +185,7 @@
     <template class="template" id="tamplate">
         <article class="element">
             <button type="button" class="element__trash"></button>
-            <img class="element__img" src="#" alt="#" />
+            <img class="element__img" src="#" alt="#" >
             <div class="element__description-container">
                 <h2 class="element__description"></h2>
                 <div class="element__like-wrapper">
