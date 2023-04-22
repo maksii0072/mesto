@@ -55,9 +55,9 @@ export class FormValidator {
         this._inputList.forEach((input) => {
             this._hideError(input);
         });
-        // this._inputList.forEach((input) => {
-        //   input.classList.remove(this.config);
-        // })
+        this._inputList.forEach((input) => {
+            input.classList.remove('popup__input-error');
+          })
     }
     enableValidation() {
         this._setEventListeners();

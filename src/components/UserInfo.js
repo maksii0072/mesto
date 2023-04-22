@@ -5,7 +5,7 @@ export default class UserInfo {
         avatarSelector
     }) {
         this._name = document.querySelector(nameSelector);
-        this._about = document.querySelector(professionSelector);
+        this._profession = document.querySelector(professionSelector);
         this._avatar = document.querySelector(avatarSelector);
         this._userId;
 
@@ -14,7 +14,7 @@ export default class UserInfo {
     getUserInfo() {
         this._userInfo = {};
         this._userInfo.name = this._name.textContent;
-        this._userInfo.about = this._about.textContent;
+        this._userInfo.about = this._profession.textContent;
         return this._userInfo;
     }
 
@@ -24,7 +24,7 @@ export default class UserInfo {
 
     setUserInfo(item) {
         this._name.textContent = item.name;
-        this._about.textContent = item.about;
+        this._profession.textContent = item.about;
         this._userId = item._id;
     }
 

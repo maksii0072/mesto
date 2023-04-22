@@ -17,8 +17,8 @@ import Api from '../components/Api.js';
 import PopupSubmit from '../components/PopupSubmit.js';
 
 import {
-    editBatton,
-    addBatton,
+    editButton,
+    addButton,
     inputNameForm,
     inputAboutForm,
     profileForm,
@@ -34,16 +34,16 @@ const api = new Api({
   })
 
 
-const popupWithImage = new PopupWithImage('#popup_img');
+const popupWithImage = new PopupWithImage('.popup_img');
 popupWithImage.setEventListeners();
 
 
-const popupWithAvatar = new PopupWithForm({popupSelector: '#popup_avatar',
+const popupWithAvatar = new PopupWithForm({popupSelector: '.popup_avatar',
 handlerSubmit: item => {
   api.editProfileAvatar(item)
     .then(res => {
       userData.setUserAvatar(res)
-      popupWithAvatar.close();
+      popupWithAvatar.closePopup();
     })
     .catch(err => {
       console.log(err);
@@ -52,19 +52,20 @@ handlerSubmit: item => {
 popupWithAvatar.setEventListeners();
 
 const userData = new UserInfo({
+    nameSelector: '.profile__title',
     professionSelector: '.profile__description',
-    avatarSelector: '#profile__avatar'
+    avatarSelector: '.profile__avatar'
 });
 
 
-const popupWithProfile = new PopupWithForm({popupSelector: '#popup_type-profile',
+const popupWithProfile = new PopupWithForm({popupSelector: '.popup_profile',
  handlerSubmit: item => {
     const submitText = popupWithProfile.getSubmitText();
     popupWithProfile.setLoadingText('Сохранение...');
     api.editProfile(item)
      .then(res => {
        userData.setUserInfo(res)
-       popupWithProfile.close();
+       popupWithProfile.closePopup();
      })
      .catch(err => {
        console.log(err);
@@ -81,7 +82,7 @@ const popupDeleteCard = new PopupSubmit({popupSelector: '.popup_delete-card', ha
     api.deleteCard(card.getCardId())
       .then(res => {
         card.deleteCard();
-        popupDeleteCard.close();
+        popupDeleteCard.closePopup();
       })
       .catch(err => {
         console.log(err);
@@ -93,15 +94,15 @@ const popupDeleteCard = new PopupSubmit({popupSelector: '.popup_delete-card', ha
   
   popupDeleteCard.setEventListeners();
 
-const popupCreateCard = new PopupWithForm({popupSelector: '#popup-cards',
+const popupCreateCard = new PopupWithForm({popupSelector: '.popup_card',
 handlerSubmit: (item) => {
     const submitText = popupCreateCard.getSubmitText();
     popupCreateCard.setLoadingText('Создание...')
     api.addCard(item)
     .then(res => {
-      const card = newCard(res);
+      const card = createNewCard(res);
       cardSection.addItem(card);
-      popupCreateCard.close();
+      popupCreateCard.closePopup();
     })
     .catch(err => {
       console.log(err);
@@ -130,7 +131,7 @@ function createNewCard(item) {
       popupWithImage.openPopup(item);
     },
     handleDeleteButton: () => {
-        popupDeleteCard.open(card);
+        popupDeleteCard.openPopup(card);
       }, 
       likes: item.likes,
       handleLikeClick: () => {
@@ -167,7 +168,7 @@ function showPopupCard() {
 function showPopupAvatar() {
     AvatarValidation.setButtonStateDisabled();
     AvatarValidation.clearErrors();
-    popupWithAvatar.open();
+    popupWithAvatar.openPopup();
   }
   
   Promise.all([api.getProfileInfo(), api.getInitialCards()])
@@ -192,5 +193,5 @@ cardValidation.enableValidation();
 AvatarValidation.enableValidation();
 
 editAvatarButton.addEventListener('click', showPopupAvatar);
-addBatton.addEventListener('click', showPopupCard);
-editBatton.addEventListener('click', showPopupProfile);
+addButton.addEventListener('click', showPopupCard);
+editButton.addEventListener('click', showPopupProfile);

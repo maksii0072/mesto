@@ -9,6 +9,7 @@ export default class PopupSubmit extends Popup {
 
   setLoadingText(text) {
     this._popupSubmitButton.textContent = text;
+  
   }
 
   getSubmitText() {
@@ -19,7 +20,7 @@ export default class PopupSubmit extends Popup {
     this._popupForm.addEventListener('submit', e => {
       e.preventDefault();
       this._handleSubmit(this._element);
-
+     
     })
     super.setEventListeners();
 

@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="pages/index.css" /> -->
     <title>Место</title>
 </head>
 
@@ -35,7 +34,22 @@
                 <button class="profile__add-button" type="button"></button>
             </section>
             <!-- ============== elements ================== -->
-            <div class="elements"></div>
+            <div class="elements">
+                <template id="tamplate">
+                    <article class="element">
+                        <button type="button" class="element__trash"></button>
+                        <img class="element__img" src="#" alt="#" >
+                        <div class="element__description-container">
+                            <h2 class="element__description"></h2>
+                            <div class="element__like-wrapper">
+                                <button class="element__like-button" type="button"></button>
+                                <span class="element__like-counter"></span>
+                            </div>
+              
+                        </div>
+                    </article>
+                </template>
+            </div>
         </div>
 
     </main>
@@ -48,21 +62,22 @@
 
     <!-- =========== popup ====================== -->
 
-    <div class="popup" id="popup_type-profile">
+    <div class="popup popup_profile">
         <div class="popup__container">
-            <button class="popup__close popup__close-profile" type="button"></button>
+            <button class="popup__close" type="button"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
             <form 
             novalidate
             class="popup__form" 
-            id="popup__form" 
             name="popup-form" 
             method="GET"
             >
                 <fieldset class="popup__form-fieldset">
                     <label class="popup__form-field">
+
+                        
                         <input
-                        id="input-name"
+                        id="name"
                         minlength="2"
                         maxlength="40"
                         autocomplete="off"
@@ -73,22 +88,22 @@
                         value="Жак-Ив Кусто" 
                         required 
                         >
-                        <span id="input-name-error" class="popup__input-error input-name-error"></span>
+                        <span id="name-error" class="popup__input-error input-name-error"></span>
                     </label>
 
                     <label class="popup__form-field">
                         <input 
-                        id="input-about"
+                        id="profession"
                         minlength="2" 
                         maxlength="200"
                         autocomplete="off"
-                        name="about" 
+                        name="profession" 
                         class="popup__input popup__input_type_about"
                         type="text" 
                         placeholder="О себе" 
                         value="Исследователь океана" 
                         required>
-                        <span id="input-about-error" class="popup__input-error about-input-error"></span>
+                        <span id="profession-error" class="popup__input-error about-input-error"></span>
                     </label>
                     <button type="submit" class="popup__save-button ">Сохранить</button>
                 </fieldset>
@@ -98,16 +113,16 @@
     </div>
 
     <!-- ================ popup add images =========================== -->
-    <div class="popup" id="popup-cards">
-        <div class=" popup__container">
+
+    <div class="popup popup_card">
+        <div class="popup__container">
             <button class="popup__close popup__close_add_card" type="button"></button>
             <h2 class="popup__title">Новое место</h2>
             <form  
             novalidate
             class="popup__form popup__form-card" 
-            id="popup__form-card" 
-            name="form" 
->
+            name="card-form" >
+
                 <fieldset class="popup__form-fieldset">
                     <label class="popup__form-field">
                         <input 
@@ -116,11 +131,11 @@
                         autocomplete="off" 
                         name="name" 
                         class="popup__input popup__input_type_link-name"
-                        id="input-link-name" 
+                        id="title" 
                         type="text" 
                         placeholder="Название" 
                         required>
-                        <span id="input-link-name-error" class="popup__input-error place-input-error"></span>
+                        <span id="title-error" class="popup__input-error place-input-error"></span>
                     </label>
 
                     <label class="popup__form-field">
@@ -128,11 +143,11 @@
                         name="link" 
                         autocomplete="off" 
                         class="popup__input popup__input_type_link-url" 
-                        id="input-link-url"
+                        id="url"
                         type="url" 
                         placeholder="Ссылка на картинку" 
                         required >
-                        <span id="input-link-url-error" class="popup__input-error url-input-error"></span>
+                        <span id="url-error" class="popup__input-error url-input-error"></span>
                     </label>
                     <button type="submit"
                         class="popup__save-button popup__save-button_add_card popup__submit">Создать</button>
@@ -142,7 +157,7 @@
     </div>
     <!-- ========== opened images ============================== -->
 
-    <div class="popup " id="popup_img">
+    <div class="popup popup_img " >
         <div class="popup__container popup__container-img">
             <button class="popup__close popup__close_img_full" type="button">
 
@@ -154,7 +169,7 @@
 
     <!-- ============== popup delete card ==============-->
 
-    <div class="popup" id="popup_delete-card">
+    <div class="popup popup_delete-card" >
         <div class=" popup__container popup__container_delete-card">
             <button class="popup__close popup__close_delete_card" type="button"></button>
             <h2 class="popup__title popup__title_delete-card">Вы уверены?</h2>
@@ -167,7 +182,7 @@
     </div>
         <!-- =========popup-avatar =============== -->
 
-        <div class="popup" id="popup_avatar">
+        <div class="popup popup_avatar" >
             <div class="popup__container popup__container-avatar">
               <button class="popup__close popup__close-avatar" type="button"></button>
               <h2 class="popup__title popup__title-avatar">Обновить аватар</h2>
@@ -178,24 +193,6 @@
               </form>
             </div>
           </div>
-    
- 
-
-    <!-- ================ tamplate =========================== -->
-    <template class="template" id="tamplate">
-        <article class="element">
-            <button type="button" class="element__trash"></button>
-            <img class="element__img" src="#" alt="#" >
-            <div class="element__description-container">
-                <h2 class="element__description"></h2>
-                <div class="element__like-wrapper">
-                    <button class="element__like-button" type="button"></button>
-                    <span class="element__like-counter"></span>
-                </div>
-  
-            </div>
-        </article>
-    </template>
 
 
 </body>

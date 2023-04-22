@@ -7,8 +7,8 @@ export default class Api {
     _getOriginalResponse(res) {
         if (res.ok) {
             return res.json();
+            
         }
-
         return Promise.reject(`Error: ${res.status} ${res.statusText}`);
     }
 
@@ -19,7 +19,8 @@ export default class Api {
                 }
             })
             .then(res => {
-                return this._getOriginalResponse(res);
+                
+             return this._getOriginalResponse(res);
             })
 
     }
@@ -32,6 +33,7 @@ export default class Api {
                 }
             })
             .then(res => {
+                
                 return this._getOriginalResponse(res);
             })
     }

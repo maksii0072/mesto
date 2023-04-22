@@ -4,24 +4,27 @@
         inputSelector: '.popup__input',
         buttonSelector: '.popup__save-button',
         buttonDisabledClass: 'popup__save-button_inactive',
-        errorClass: 'popup__input_type_error'
+        errorClass: 'popup__input-error'
     }
 
-      const editBatton = document.querySelector('.profile__edit-button'),
-            addBatton = document.querySelector('.profile__add-button'),
-            profilePopup = document.querySelector('#popup_type-profile'),
-            inputNameForm = document.querySelector('.popup__input_type_name'),
-            inputAboutForm = document.querySelector('.popup__input_type_about'),
-            profileForm = document.querySelector('.popup__form'),
-            addPopupCards = document.querySelector('#popup-cards'),
-            formElementCard = document.querySelector('#popup__form-card'),
-            editAvatarButton = document.querySelector('.profile__avatar-button'),
-            avatarForm = document.querySelector('.popup__form-avatar'),
-            deleteButton = document.querySelector('.element__trash');
-            
+    const editButton = document.querySelector('.profile__edit-button'),
+        editAvatarButton = document.querySelector('.profile__avatar-button'),
+        addButton = document.querySelector('.profile__add-button'),
+        profilePopup = document.querySelector('.popup_profile'),
+        inputNameForm = document.querySelector('.popup__input_type_name'),
+        inputAboutForm = document.querySelector('.popup__input_type_profession'),
+        profileForm = document.querySelector('.popup__form'),
+        addPopupCards = document.querySelector('.popup_card'),
+        formElementCard = document.querySelector('.popup__form-card'),
+
+        avatarForm = document.querySelector('.popup__form-avatar'),
+        deleteButton = document.querySelector('.element__trash');
+
+    console.log(deleteButton);
+
     export {
-        editBatton,
-        addBatton,
+        editButton,
+        addButton,
         profilePopup,
         inputNameForm,
         inputAboutForm,

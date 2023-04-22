@@ -39,6 +39,7 @@
 @import url(../blocks/element/__like-button/_active/element__like-button_active.css);
 @import url(../blocks/element/__like-counter/element__like-counter.css);
 @import url(../blocks/element/__like-wrapper/element__like-wrapper.css);
+@import url(../blocks/element/__trash/_inactive/element__trash-inactive.css);
 
 /* =============== footer =============== */
 
