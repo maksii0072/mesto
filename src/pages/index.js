@@ -146,7 +146,7 @@ function createNewCard(item) {
             console.log(err);
           })
       }
-    }, '#template')
+    }, '#tamplate')
     const generatedCard = card.createCard();
     return generatedCard;
   }
