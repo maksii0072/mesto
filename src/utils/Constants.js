@@ -4,7 +4,7 @@
         inputSelector: '.popup__input',
         buttonSelector: '.popup__save-button',
         buttonDisabledClass: 'popup__save-button_inactive',
-        errorClass: 'popup__input-error'
+        errorClass: 'popup__input_type_error'
     }
 
     const editButton = document.querySelector('.profile__edit-button'),

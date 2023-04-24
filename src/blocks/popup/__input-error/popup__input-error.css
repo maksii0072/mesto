@@ -5,7 +5,7 @@
     position: absolute;
     top: calc(100% + 2px);
     left: 0;
-    transition: 0.3s;
+    transition: .3s;
 }
 
 .popup__input-error_active {
