@@ -12,7 +12,7 @@
         addButton = document.querySelector('.profile__add-button'),
         profilePopup = document.querySelector('.popup_profile'),
         inputNameForm = document.querySelector('.popup__input_type_name'),
-        inputAboutForm = document.querySelector('.popup__input_type_profession'),
+        inputAboutForm = document.querySelector('.popup__input_type_about'),
         profileForm = document.querySelector('.popup__form'),
         addPopupCards = document.querySelector('.popup_card'),
         formElementCard = document.querySelector('.popup__form-card'),
