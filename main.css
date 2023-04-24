@@ -11,7 +11,7 @@
 .profile__edit-button{align-self:center;background-color:#000;background-image:url(a1892ea72cb87c8fc3aa.svg);background-position:50%;background-repeat:no-repeat;border:1px solid #fff;cursor:pointer;margin-left:17px;min-height:24px;min-width:24px;outline:none;padding:0;transition:opacity .3s}.profile__edit-button:hover{opacity:.6}@media screen and (max-width:426px){.profile__edit-button{align-self:center;background-size:18px;border:none;margin-left:10px}}
 .profile__info{display:flex;flex-direction:column;justify-content:center;margin-left:32px;max-width:336px}@media screen and (min-width:426px) and (max-width:768px){.profile__info{margin-left:5px;width:95%}}@media screen and (max-width:426px){.profile__info{align-items:center;margin:0 auto}}
 .profile__description{color:#fff;font-size:18px;font-weight:400;line-height:28px;margin:0;max-width:318px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}@media screen and (max-width:767px){.profile__description{margin:16px 0 36px;text-align:center}}@media screen and (max-width:426px){.profile__description{font-size:14px;line-height:17px;margin:6px 0 34px;max-width:280px}}
-.profile__avatar{border-radius:100%;max-height:120px;max-width:120px}
+.profile__avatar{border-radius:100%;height:120px;width:120px}
 .profile__add-button{background-color:#000;background-image:url(d86bb2edc2f6eadb96b7.svg);background-position:50%;background-repeat:no-repeat;border:1px solid #fff;border-radius:2px;cursor:pointer;height:50px;margin-left:auto;outline:none;padding:0;transition:opacity .3s;width:150px}.profile__add-button:hover{opacity:.6}@media screen and (max-width:767px){.profile__add-button{margin:0;width:95%}}@media screen and (max-width:426px){.profile__add-button{background-size:16px;width:282px}}
 .profile__avatar-wrapper{position:relative}
 .profile__button-wrapper{align-items:center;bottom:0;cursor:pointer;display:flex;justify-content:center;left:0;opacity:0;position:absolute;right:0;top:0;transition:.4s}.profile__button-wrapper:hover{background-color:rgba(0,0,0,.8);opacity:1}
@@ -24,7 +24,7 @@
 .element__img{border-radius:10px 10px 0 0;cursor:pointer;display:block;height:282px;min-width:282px;-o-object-fit:cover;object-fit:cover;width:100%}
 .element__trash{background-color:transparent;background-image:url(cbc09a894bdd4c956365.svg);background-size:cover;border:none;color:#fff;cursor:pointer;height:19px;padding:0;position:absolute;right:19px;top:23px;transition:opacity .3s linear;width:18px}.element__trash:hover{opacity:.5}
 .element__like-button_active{background-image:url(e787eeb70bb65b7b453a.svg);background-repeat:no-repeat;border:none;transition:opacity .4s linear}
-.element__like-counter{font-size:13px;line-height:16px;margin:3px 0 0;text-align:center}
+.element__like-counter{color:#000;font-size:13px;line-height:3px;margin:11px 0 0;text-align:center}
 .element__like-wrapper{align-items:center;display:flex;flex-direction:column;height:35px;justify-content:center;width:22px}
 .element__trash-inactive{display:none}
 .footer{color:#fff;margin:0 auto;max-width:880px;padding:0 0 60px}@media screen and (max-width:900px){.footer{max-width:80%;padding:0 0 40px}}@media screen and (max-width:767px){.footer{padding:0 0 36px}}@media screen and (max-width:426px){.footer{max-width:282px;padding:48px 0 36px}}
@@ -36,6 +36,8 @@
 .popup__img-caption{color:#fff;font-size:12px;font-weight:400;line-height:14px;margin:10px 0 0}
 .popup_image{max-height:100%;max-width:100%;-o-object-fit:cover;object-fit:cover}
 .popup__img-photo{max-height:75vh;max-width:100%;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
+.popup__delete-button{margin:38px 0 23px}
+.popup__title_delete-card{padding:20px 0 0}
 .popup__close{background-color:transparent;background-image:url(2ceb783afbab75916ddc.svg);background-position:50%;background-size:35px 35px;border:none;cursor:pointer;height:32px;outline:none;padding:0;position:absolute;right:-39px;top:-36px;transition:opacity .3s;width:32px}.popup__close:hover{opacity:.6}@media screen and (max-width:570px){.popup__close{background-size:20px 20px;height:20px;right:0;top:-38px;width:20px}}
 
 
