@@ -15,6 +15,7 @@ export default class PopupSubmit extends Popup {
   getSubmitText() {
     return this._popupSubmitButton.textContent;
   }
+  
 
   setEventListeners() {
     this._popupForm.addEventListener('submit', e => {
@@ -25,6 +26,8 @@ export default class PopupSubmit extends Popup {
     super.setEventListeners();
 
   }
+
+  
 
   openPopup(element) {
     this._element = element;

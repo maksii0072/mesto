@@ -37,9 +37,9 @@ const api = new Api({
 const popupWithImage = new PopupWithImage('.popup_img');
 popupWithImage.setEventListeners();
 
-
 const popupWithAvatar = new PopupWithForm({popupSelector: '.popup_avatar',
 handlerSubmit: item => {
+  popupWithAvatar.setLoadingText('Сохранение...');
   api.editProfileAvatar(item)
     .then(res => {
       userData.setUserAvatar(res)

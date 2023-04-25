@@ -20,8 +20,6 @@
         avatarForm = document.querySelector('.popup__form-avatar'),
         deleteButton = document.querySelector('.element__trash');
 
-    console.log(deleteButton);
-
     export {
         editButton,
         addButton,

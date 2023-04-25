@@ -9,11 +9,10 @@ export default class PopupWithForm extends Popup {
         this._handlerSubmit = handlerSubmit;
         this._popupForm = this._popup.querySelector('.popup__form');
         this._popupSubmitButton = this._popup.querySelector('.popup__save-button');
-
+        this._inputList = Array.from(this._popupForm.querySelectorAll('.popup__input'));
     }
 
     _getInputValues() {
-        this._inputList = this._popup.querySelectorAll('.popup__input');
         this._inputValues = {};
         this._inputList.forEach(input => {
             this._inputValues[input.name] = input.value;
@@ -34,13 +33,12 @@ export default class PopupWithForm extends Popup {
             e.preventDefault();
             this._handlerSubmit(this._getInputValues());
 
-
-
         })
         super.setEventListeners();
 
 
     }
+
 
     closePopup() {
         super.closePopup();
