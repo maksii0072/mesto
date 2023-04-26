@@ -23,8 +23,8 @@ import {
     inputAboutForm,
     profileForm,
     formElementCard,
-    editAvatarButton,
-    avatarForm
+    avatarForm,
+    wrapperButton
 
 } from '../utils/Constants.js'
 
@@ -196,6 +196,7 @@ profileValidation.enableValidation();
 cardValidation.enableValidation();
 AvatarValidation.enableValidation();
 
-editAvatarButton.addEventListener('click', showPopupAvatar);
+
+wrapperButton.addEventListener('click', showPopupAvatar);
 addButton.addEventListener('click', showPopupCard);
 editButton.addEventListener('click', showPopupProfile);

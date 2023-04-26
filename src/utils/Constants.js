@@ -9,6 +9,7 @@
 
     const editButton = document.querySelector('.profile__edit-button'),
         editAvatarButton = document.querySelector('.profile__avatar-button'),
+        wrapperButton = document.querySelector('.profile__button-wrapper'),
         addButton = document.querySelector('.profile__add-button'),
         profilePopup = document.querySelector('.popup_profile'),
         inputNameForm = document.querySelector('.popup__input_type_name'),
@@ -31,5 +32,6 @@
         addPopupCards,
         deleteButton,
         avatarForm,
-        editAvatarButton
+        editAvatarButton,
+        wrapperButton
     };
