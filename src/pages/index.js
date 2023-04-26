@@ -39,6 +39,7 @@ popupWithImage.setEventListeners();
 
 const popupWithAvatar = new PopupWithForm({popupSelector: '.popup_avatar',
 handlerSubmit: item => {
+  const submitText = popupWithAvatar.getSubmitText();
   popupWithAvatar.setLoadingText('Сохранение...');
   api.editProfileAvatar(item)
     .then(res => {
