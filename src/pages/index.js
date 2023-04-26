@@ -48,6 +48,9 @@ handlerSubmit: item => {
     .catch(err => {
       console.log(err);
     })
+    .finally(() => {
+      popupWithAvatar.setLoadingText(submitText);
+    })
 }})
 popupWithAvatar.setEventListeners();
 
